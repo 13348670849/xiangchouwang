@@ -1,0 +1,12 @@
+
+server:
+  port: 4000
+spring:
+  application:
+    name: member-manager
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:enjoy@localhost:7001/eureka/
+  instance:
+    prefer-ip-address: true

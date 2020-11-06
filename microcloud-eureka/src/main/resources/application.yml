@@ -1,0 +1,19 @@
+server:
+ port: 7001
+eureka:
+  server:
+    enable-self-preservation: true #设置为false表示关闭保护模式
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+        #defaultZone: http://admin:enjoy@localhost:7001/eureka
+        defaultZone: http://admin:enjoy@eurekaapp:7001/eureka
+  instance: # eureak实例定义
+    hostname: eurekaapp # 定义 Eureka 实例所在的主机名称
+
+spring:
+  security:
+    user:
+      name: admin
+      password: enjoy

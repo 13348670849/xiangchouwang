@@ -1,0 +1,28 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource # 配置当前要使用的数据源的操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver # 配置MySQL的驱动程序类
+    url: jdbc:mysql://192.168.2.25:3306/hndxtest?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 6fdfb0deb0e7843f
+    test-on-borrow: false
+    test-while-idle: true
+    time-between-eviction-runs-millis: 3600000
+  application:
+    name: MICROCLOUD-PROVIDER-PRODUCT
+eureka:
+  client: # 客户端进行Eureka注册的配置
+    register-with-eureka: true
+    service-url:
+      #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://admin:enjoy@localhost:1000/eureka
+  instance:
+    instance-id: MICROCLOUD-PROVIDER-PRODUCT1
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 5  # 如果现在超过了5秒的间隔（默认是90秒）
+
+mybatis:
+  mapperLocations: classpath:mapping/*.xml
